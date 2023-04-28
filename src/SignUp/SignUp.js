@@ -99,12 +99,15 @@ const SignUp = () => {
     setLoading(false);
     try {
       axios
-        .post("http://localhost:3000/register", {
-          name: input.Name,
-          email: input.Email,
-          number: input.Number,
-          password: input.Password,
-        })
+        .post(
+          "https://cuvette-addjob-full-stack-project-sc23.onrender.com/register",
+          {
+            name: input.Name,
+            email: input.Email,
+            number: input.Number,
+            password: input.Password,
+          }
+        )
         .then((response) => {
           setLoading(false);
 
