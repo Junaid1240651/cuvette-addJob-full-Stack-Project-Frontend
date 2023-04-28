@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+}
+.navbarContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 14.2vh;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  background-color: #f74949;
+}
+.navbarContainer > div:nth-child(1) {
+  font-size: 35px;
+  padding: 0px;
+  margin: 10px 0px 0px 80px;
+  color: white;
+}
+.JobFinder {
+  height: 100%;
+  border: none;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.btnDiv {
+  display: flex;
+  align-items: center;
+  margin-right: 80px;
+}
+.logoutDiv {
+  display: flex;
+  align-items: center;
+  margin-right: 80px;
+}
+
+.logoutDiv > p {
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 144.02%;
+  margin-left: 20px;
+  text-align: center;
+  cursor: pointer;
+
+  color: #ffffff;
+}
+.loginBtn {
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  margin-right: 40px;
+  box-shadow: 0px 7px 13px rgba(255, 32, 32, 0.25);
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 25px;
+  background-color: #ff6b6b;
+  color: white;
+  padding: 10px 20px 10px 20px;
+}
+.registerBtn {
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 10px 20px 10px 20px;
+  box-shadow: 0px 7px 13px rgba(255, 32, 32, 0.25);
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 25px;
+  background-color: white;
+  color: #ff6b6b;
+}

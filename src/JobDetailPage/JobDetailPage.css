@@ -1,0 +1,237 @@
+.containner {
+  position: commonDivsolute;
+  top: 10%;
+}
+
+.containnerInnerDiv {
+  display: flex;
+  margin: 10px 110px 20px 110px;
+
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 4px 23px 2px rgba(0, 0, 0, 0.2);
+}
+
+.containnerInnerDiv > p {
+  font-weight: 500;
+  font-size: 29px;
+  line-height: 144.02%;
+  margin: 0px;
+  text-align: center;
+  color: #000000;
+}
+
+.jobDetailsDiv {
+  display: flex;
+
+  flex-direction: column;
+  padding: 10px 40px 20px 40px;
+  margin: 30px 110px 50px 110px;
+  background: #ffffff;
+  box-shadow: 0px 4px 23px 2px rgba(0, 0, 0, 0.2);
+}
+
+.commonDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.jobDetailsDiv > div:nth-child(1) > p {
+  font-weight: 500;
+  font-size: 20.2466px;
+  gap: 5px;
+  line-height: 144.02%;
+
+  margin: 10px 0px 0px 0px;
+
+  color: #999999;
+}
+
+.jobDetailsDiv > div:nth-child(1) > p:nth-child(1) {
+  margin-right: 20px;
+}
+
+.jobDetailsDiv > div:nth-child(2) > div > p {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 144.02%;
+  /* or 69px */
+
+  margin: 0px;
+  color: #000000;
+}
+
+.jobDetailsDiv > div:nth-child(2) > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jobDetailsDiv > div:nth-child(2) > div:nth-child(1) > button {
+  border: none;
+
+  padding: 5px 15px 5px 15px;
+  background: #ed5353;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 144.02%;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.jobDetailsDiv > div:nth-child(2) > p {
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 144.02%;
+  margin: 0px 0px 0px 0px;
+
+  color: #ed5353;
+}
+
+.jobDetailsDiv > div:nth-child(3) > div:nth-child(1) > div {
+  display: flex;
+  align-items: center;
+}
+
+.jobDetailsDiv > div:nth-child(3) > div:nth-child(1) > div > p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 164.5%;
+  margin-right: 30px;
+  text-align: center;
+  color: #999999;
+}
+
+.jobDetailsDiv > div:nth-child(3) > div:nth-child(2) > p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 164.5%;
+
+  color: #999999;
+}
+
+.jobDetailsDiv > div:nth-child(3) > div:nth-child(1) > div > img {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  margin-bottom: 0px;
+
+  margin-right: 10px;
+}
+
+.jobDetailsDiv > div:nth-child(3) > div:nth-child(1) > p {
+  margin: 0px;
+  margin-top: 7px;
+}
+
+.jobDetailsDiv > div:nth-child(3) > div:nth-child(2) > p:nth-child(2) {
+  color: #595959;
+}
+
+.jobDetailsDiv > div:nth-child(4) > p:nth-child(1) {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 169.52%;
+
+  color: #000000;
+}
+
+.jobDetailsDiv > div:nth-child(4) > p:nth-child(2) {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 164.5%;
+
+  color: #595959;
+}
+
+.jobDetailsDiv > div:nth-child(5) > p:nth-child(1) {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 169.52%;
+
+  color: #000000;
+}
+
+.jobDetailsDiv > div:nth-child(5) > p:nth-child(2) {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 164.5%;
+
+  color: #595959;
+}
+
+.jobDetailsDiv > div:nth-child(6) > div:nth-child(1) > p {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 169.52%;
+
+  color: #000000;
+}
+
+.jobDetailsDiv > div:nth-child(6) > div:nth-child(2) > p {
+  background: #ffeeee;
+  border-radius: 21px;
+
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 169.52%;
+  margin: 0px;
+  margin-right: 20px;
+  padding: 2px 15px 2px 15px;
+  color: #595959;
+}
+
+.jobDetailsDiv > div:nth-child(7) > p:nth-child(1) {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 169.52%;
+
+  color: #000000;
+}
+
+.jobDetailsDiv > div:nth-child(7) > p:nth-child(2) {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 164.5%;
+
+  color: #595959;
+}
+
+@media screen and (max-width: 1100px) {
+  .jobDetailsDiv {
+    margin: 30px 80px 50px 80px;
+  }
+  .containnerInnerDiv {
+    margin: 30px 80px 50px 80px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .jobDetailsDiv {
+    margin: 30px 50px 50px 50px;
+  }
+  .jobDetailsDiv > div:nth-child(2) > div > p {
+    font-size: 40px;
+  }
+  .containnerInnerDiv {
+    margin: 30px 50px 50px 50px;
+  }
+  .containnerInnerDiv > p {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .jobDetailsDiv > div:nth-child(2) > div > p {
+    font-size: 30px;
+  }
+  .containnerInnerDiv > p {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .jobDetailsDiv > div:nth-child(2) > div > p {
+    font-size: 25px;
+  }
+}
