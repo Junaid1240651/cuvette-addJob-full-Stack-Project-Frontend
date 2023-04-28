@@ -51,7 +51,7 @@ const EditJobPage = () => {
     try {
       axios
         .post(
-          "http://cuvette-addjob-full-stack-project-sc23.onrender.com/edit/" +
+          "https://cuvette-addjob-full-stack-project-sc23.onrender.com/edit/" +
             { id },
           {
             id: id,
@@ -86,7 +86,7 @@ const EditJobPage = () => {
     try {
       axios
         .post(
-          "http://cuvette-addjob-full-stack-project-sc23.onrender.com/procted",
+          "https://cuvette-addjob-full-stack-project-sc23.onrender.com/procted",
           {
             token: loginTokenVerify
               ? loginTokenVerify.replaceAll('"', "")
