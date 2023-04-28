@@ -1,5 +1,5 @@
 import React from "react";
-import ReactLoading from "https://cdn.skypack.dev/react-loading@2.0.3";
+import ReactLoading from "react-loading";
 import "./LoadingScreen.css";
 const LoadingScreen = () => {
   return (
