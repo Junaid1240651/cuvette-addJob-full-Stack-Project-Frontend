@@ -21,20 +21,26 @@ const JobDetailPage = () => {
   }
 
   useEffect(() => {
-    axios
-      .get(
-        "https://cuvette-addjob-full-stack-project.onrender.com/jobdetails/" +
-          id
-      )
-      .then(function (response) {
-        setApiData([response.data]);
-        setLoading(true);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    setLogintokenVerify(localStorage.getItem("LoginJwtToken"));
-    setSigntokenVerify(localStorage.getItem("SignUpJwtToken"));
+    try {
+      axios
+        .get(
+          "https://cuvette-addjob-full-stack-project.onrender.com/jobdetails/" +
+            id
+        )
+        .then(function (response) {
+          setApiData([response.data]);
+          setLoading(true);
+        })
+        .catch(function (error) {
+          alert(error + "Server Error");
+          navigate("/");
+        });
+      setLogintokenVerify(localStorage.getItem("LoginJwtToken"));
+      setSigntokenVerify(localStorage.getItem("SignUpJwtToken"));
+    } catch (error) {
+      alert.log(error);
+      navigate("/");
+    }
   }, []);
 
   return (

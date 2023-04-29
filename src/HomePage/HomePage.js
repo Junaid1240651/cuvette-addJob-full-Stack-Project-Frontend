@@ -11,7 +11,8 @@ import LoadingScreen from "../LoadingScreen/LoadingScreen";
 const HomePage = () => {
   const navigate = useNavigate();
   const [skill, setskill] = useState([]);
-  const [searchTitle, setSearchTitle] = useState();
+  const [apidata2, setApiData2] = useState("");
+  const [searchTitle, setSearchTitle] = useState("");
   const [apidata, setApiData] = useState("");
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(true);
@@ -39,26 +40,34 @@ const HomePage = () => {
   }
 
   function handleChange(e) {
+    const filteredData = apidata2.filter((data) =>
+      data.jobPosition.includes(e.target.value)
+    );
+    setApiData(filteredData);
     setSearchTitle(e.target.value);
   }
 
   useEffect(() => {
     setLoading2(false);
 
-    axios
-      .get("https://cuvette-addjob-full-stack-project.onrender.com/", {
-        params: {
-          jobPosition: searchTitle,
-          skill: skill,
-        },
-      })
-      .then(function (response) {
-        setApiData(response.data);
-        setLoading(true);
-        setLoading2(true);
-      })
-      .catch((error) => console.error(error));
-  }, [skill, searchTitle]);
+    try {
+      axios
+        .get("https://cuvette-addjob-full-stack-project.onrender.com/", {
+          params: {
+            skill: skill,
+          },
+        })
+        .then(function (response) {
+          setApiData(response.data);
+          setApiData2(response.data);
+          setLoading(true);
+          setLoading2(true);
+        })
+        .catch((error) => alert.error(error + "Server Error"));
+    } catch (error) {
+      alert(error);
+    }
+  }, [skill]);
 
   useEffect(() => {
     setLogintokenVerify(localStorage.getItem("LoginJwtToken"));

@@ -64,9 +64,7 @@ hr {
   border: 2px solid #c2c2c2;
   border-radius: 5px;
 }
-.formInnerDiv > div :nth-child(2) {
-  margin-left: 20px;
-}
+
 textarea {
   height: 80px;
   width: 80%;
@@ -194,6 +192,7 @@ textarea {
   display: none;
   cursor: pointer;
   font-size: 20px;
+  margin-left: 0px;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 100px;

@@ -72,11 +72,15 @@ const EditJobPage = () => {
         )
         .then((response) => {
           navigate("/");
+        })
+        .catch((error) => {
+          alert(error + "server Error");
+          setLoading(false);
         });
     } catch (error) {
       setLoading(false);
 
-      console.log(error);
+      alert(error + "server Error");
     }
   };
 
@@ -107,10 +111,14 @@ const EditJobPage = () => {
         )
         .then((response) => {
           navigate("/");
+        })
+        .catch((error) => {
+          alert(error + "server Error");
+          setLoading(true);
         });
     } catch (error) {
       setLoading(true);
-      console.error("Error:", error);
+      alert(error + "server Error");
     }
   };
 
@@ -129,38 +137,45 @@ const EditJobPage = () => {
     setworkPlace(e.target.id);
   }
   useEffect(() => {
-    axios
-      .get(
-        "https://cuvette-addjob-full-stack-project-sc23.onrender.com/jobdetails/" +
-          id
-      )
-      .then(function (response) {
-        setLoading(true);
-        setjobDetails({
-          companyName: response.data.companyName,
-          jobPosition: response.data.jobPosition,
-          jobDuration: response.data.jobDuration,
-          jobVacancy: response.data.jobVacancy,
-          monthlySalary: response.data.monthlySalary,
-          jobType: response.data.jobType,
-          workPlace: response.data.workPlace,
-          location: response.data.location,
-          jobDescription: response.data.jobDescription,
-          aboutCompany: response.data.aboutCompany,
-          skill: response.data.skill,
+    try {
+      axios
+        .get(
+          "https://cuvette-addjob-full-stack-project.onrender.com/jobdetails/" +
+            id
+        )
+        .then(function (response) {
+          setjobDetails({
+            companyName: response.data.companyName,
+            jobPosition: response.data.jobPosition,
+            jobDuration: response.data.jobDuration,
+            jobVacancy: response.data.jobVacancy,
+            monthlySalary: response.data.monthlySalary,
+            jobType: response.data.jobType,
+            workPlace: response.data.workPlace,
+            location: response.data.location,
+            jobDescription: response.data.jobDescription,
+            aboutCompany: response.data.aboutCompany,
+            skill: response.data.skill,
+          });
+          setjobType(response.data.jobType);
+          setworkPlace(response.data.workPlace);
+          const skillOptions = response.data.skill.map((skill) => ({
+            label: skill.value,
+            value: skill.value,
+          }));
+          setLoading(true);
+
+          setSelectedSkills(skillOptions);
+        })
+        .catch((error) => {
+          alert(error + "server Error");
         });
-        setjobType(response.data.jobType);
-        setworkPlace(response.data.workPlace);
-        const skillOptions = response.data.skill.map((skill) => ({
-          label: skill.value,
-          value: skill.value,
-        }));
 
-        setSelectedSkills(skillOptions);
-      });
-
-    setLogintokenVerify(localStorage.getItem("LoginJwtToken"));
-    setSigntokenVerify(localStorage.getItem("SignUpJwtToken"));
+      setLogintokenVerify(localStorage.getItem("LoginJwtToken"));
+      setSigntokenVerify(localStorage.getItem("SignUpJwtToken"));
+    } catch (error) {
+      alert(error + "server Error");
+    }
     if (!id) {
       setLoading(true);
     }
