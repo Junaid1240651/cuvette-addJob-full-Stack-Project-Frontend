@@ -23,7 +23,7 @@ const JobDetailPage = () => {
   useEffect(() => {
     axios
       .get(
-        "https://cuvette-addjob-full-stack-project-sc23.onrender.com/jobdetails/" +
+        "https://cuvette-addjob-full-stack-project.onrender.com/jobdetails/" +
           id
       )
       .then(function (response) {

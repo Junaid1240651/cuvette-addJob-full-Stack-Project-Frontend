@@ -46,7 +46,7 @@ const HomePage = () => {
     setLoading2(false);
 
     axios
-      .get("https://cuvette-addjob-full-stack-project-sc23.onrender.com/", {
+      .get("https://cuvette-addjob-full-stack-project.onrender.com/", {
         params: {
           jobPosition: searchTitle,
           skill: skill,

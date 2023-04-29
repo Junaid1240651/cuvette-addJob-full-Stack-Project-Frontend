@@ -100,7 +100,7 @@ const SignUp = () => {
     try {
       axios
         .post(
-          "https://cuvette-addjob-full-stack-project-sc23.onrender.com/register",
+          "https://cuvette-addjob-full-stack-project.onrender.com/register",
           {
             name: input.Name,
             email: input.Email,
