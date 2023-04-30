@@ -40,11 +40,12 @@ const HomePage = () => {
   }
 
   function handleChange(e) {
+    const searchInput = e.target.value.toLowerCase();
     const filteredData = apidata2.filter((data) =>
-      data.jobPosition.includes(e.target.value)
+      data.jobPosition.toLowerCase().includes(searchInput)
     );
     setApiData(filteredData);
-    setSearchTitle(e.target.value);
+    setSearchTitle(searchInput);
   }
 
   useEffect(() => {
@@ -52,14 +53,11 @@ const HomePage = () => {
 
     try {
       axios
-        .get(
-          "https://cuvette-addjob-full-stack-project-backend.onrender.com/",
-          {
-            params: {
-              skill: skill,
-            },
-          }
-        )
+        .get("https://cuvette-addjob-full-stack-project.onrender.com/", {
+          params: {
+            skill: skill,
+          },
+        })
         .then(function (response) {
           setApiData(response.data);
           setApiData2(response.data);

@@ -24,7 +24,7 @@ const JobDetailPage = () => {
     try {
       axios
         .get(
-          "https://cuvette-addjob-full-stack-project-backend.onrender.com/jobdetails/" +
+          "https://cuvette-addjob-full-stack-project.onrender.com/jobdetails/" +
             id
         )
         .then(function (response) {
