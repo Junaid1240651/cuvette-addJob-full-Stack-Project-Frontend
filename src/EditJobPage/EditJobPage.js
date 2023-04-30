@@ -51,7 +51,7 @@ const EditJobPage = () => {
     try {
       axios
         .post(
-          "https://cuvette-addjob-full-stack-project.onrender.com/edit/" +
+          "https://cuvette-addjob-full-stack-project-backend.onrender.com/edit/" +
             { id },
           {
             id: id,
@@ -90,7 +90,7 @@ const EditJobPage = () => {
     try {
       axios
         .post(
-          "https://cuvette-addjob-full-stack-project.onrender.com/procted",
+          "https://cuvette-addjob-full-stack-project-backend.onrender.com/procted",
           {
             token: loginTokenVerify
               ? loginTokenVerify.replaceAll('"', "")
@@ -140,7 +140,7 @@ const EditJobPage = () => {
     try {
       axios
         .get(
-          "https://cuvette-addjob-full-stack-project.onrender.com/jobdetails/" +
+          "https://cuvette-addjob-full-stack-project-backend.onrender.com/jobdetails/" +
             id
         )
         .then(function (response) {
@@ -163,6 +163,7 @@ const EditJobPage = () => {
             label: skill.value,
             value: skill.value,
           }));
+
           setLoading(true);
 
           setSelectedSkills(skillOptions);
@@ -345,7 +346,11 @@ const EditJobPage = () => {
                     {id === undefined ? (
                       <button>+ Add Job</button>
                     ) : (
-                      <button>+ Edit Job</button>
+                      <button
+                      // disabled={imageFile || selectedSkills || jobDetails}
+                      >
+                        + Edit Job
+                      </button>
                     )}
                   </div>
                 </form>

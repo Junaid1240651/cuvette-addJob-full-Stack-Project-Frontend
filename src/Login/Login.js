@@ -74,10 +74,13 @@ const Login = () => {
 
     try {
       axios
-        .post("https://cuvette-addjob-full-stack-project.onrender.com/login", {
-          email: input.Email,
-          password: input.Password,
-        })
+        .post(
+          "https://cuvette-addjob-full-stack-project-backend.onrender.com/login",
+          {
+            email: input.Email,
+            password: input.Password,
+          }
+        )
         .then((response) => {
           localStorage.setItem(
             "LoginJwtToken",

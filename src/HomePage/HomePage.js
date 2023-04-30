@@ -52,11 +52,14 @@ const HomePage = () => {
 
     try {
       axios
-        .get("https://cuvette-addjob-full-stack-project.onrender.com/", {
-          params: {
-            skill: skill,
-          },
-        })
+        .get(
+          "https://cuvette-addjob-full-stack-project-backend.onrender.com/",
+          {
+            params: {
+              skill: skill,
+            },
+          }
+        )
         .then(function (response) {
           setApiData(response.data);
           setApiData2(response.data);
@@ -65,7 +68,7 @@ const HomePage = () => {
         })
         .catch((error) => alert.error(error + "Server Error"));
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   }, [skill]);
 
